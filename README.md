@@ -4,8 +4,7 @@
 
 Based on the Book [An Artist's Guide to Programming](https://nostarch.com/artists-guide-programming)
 
-
-![](sketch013b.jpg)
+![](sketch013b.png)
 
 ## Dependencies
 
