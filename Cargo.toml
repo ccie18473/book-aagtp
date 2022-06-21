@@ -1,0 +1,21 @@
+[workspace]
+
+members = [
+    "sketch001a",
+    "sketch001b",
+    "sketch001c",
+    "sketch002a",
+    "sketch002b",
+    "sketch003a",
+    "sketch003b",
+    "sketch003c",
+    "sketch004a",
+    "sketch004b",
+    "sketch005a",
+    "sketch005b",
+    "sketch013a",
+    "sketch013b",
+]
+
+# Required for wgpu v0.10 feature resolution.
+resolver = "2"

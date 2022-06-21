@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Sketch 100: Processing on the Web</title> 
+<script src="processing-1.4.1.min.js"></script>
+</head>
+<body bgcolor=aa99aa>
+<br><br>
+<h1> Sketch 91: Simulating the Aurora
+ </h1>
+This is sketch 91 adapted for the web. <br>
+Among objects that are difficult to render on a computer, the northern lights or aurora is near the top of the list. They flicker and roll, the colors change, the shape changes at various speeds, and they generally have no one specific shape. There have been efforts to draw them with more or less success; this sketch is one of those attempts.<br>
+<center>
+<canvas data-processing-sources="sketch100.pde">
+</canvas>
+</center>
+<br>
+There are many shapes that the aurora can take, and this sketch will only attempt to draw one of those: the typical curtain type, one example of with appears in the figure to the right.<br>
+
+The sketch will make the color change slowly as a function of Y position. Starting with a red value at the bottom of the auroral curtain, the hue will increase in pixels above. Starting at a hue value of h=15, the hue increases according to:<br>
+ <b> h = h + random(.87)  </b><br>
+At the very top of the curtain the brightness will decease, fading the color away. This is the first aspect of the sketch.<br>
+Next, notice that the aurora appears to concist of vertical strokes and is banded horizontally. This is accomplished in the program by changing the saturation of the pixels periodically as a function of X coordinate. The code is:<br><b>
+
+  		  if (i%3 == 0) s=220+random(20)-10; <br>
+    		   else if (i%2 == 0) s = 210+random(20)-10; <br>
+   		   else s = 200+random(20)-10; <br></b> 
+
+where i is the horizontal position and s is the saturation. I%3 is the remainder when i is divided by 3, so there is a somewhat random variation in the saturation, giving darker bands.<br>
+
+The curtain effect is accomplished using a sine function to locate the pixels vertically. For a basic coordinate (i,j) the actual pixel will be at  (i,j-bb*sin(a*i)) where the parameters a and bb change by a small and random amount during each iteration. This makes the curtain move.<br>
+
+</body>
+</html>
